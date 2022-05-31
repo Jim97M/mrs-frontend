@@ -3,7 +3,6 @@
   "version": "1.0.0",
   "description": "Management FrontEnd",
   "main": "index.js",
-  "type": "module",
   "scripts": {
     "dev": "webpack serve --mode development",
     "test": "test"

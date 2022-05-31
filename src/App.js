@@ -5,7 +5,7 @@ const App = () => {
         <div>
            <p>Started</p> 
         </div>
-    )
-}
+    );
+};
 
 export default App;

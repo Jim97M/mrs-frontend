@@ -1,7 +1,8 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App.js';
+require('file-loader?name=[name].[ext]!./index.html');
+import React from "react";
+import ReactDOM from "react-dom";
+import App from "./App";
 
 const appElement = document.getElementById("app");
-ReactDOM.render(<App/>, document.getElementById('root'));
+ReactDOM.render(<App/>, appElement);
 
