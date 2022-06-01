@@ -1,12 +1,16 @@
-import path from "path";
-import MiniCssExtractPlugin from "mini-css-extract-plugin";
-import { fileURLToPath } from "url";
+const path = require("path");
+const miniCssExtraPlugin = require("mini-css-extract-plugin");
+ const HtmlWebpackPlugin = require('html-webpack-plugin')
 
-let __filename = fileURLToPath(import.meta.url);
+// import path from "path";
+// import MiniCssExtractPlugin from "mini-css-extract-plugin";
+// import { fileURLToPath } from "url";
 
-let __dirname = path.dirname(__filename);
+// let __filename = fileURLToPath(import.meta.url);
 
-export default {
+// let __dirname = path.dirname(__filename);
+
+module.exports = {
  
     output: {
         path: path.join(__dirname, "/dist"),
@@ -27,9 +31,13 @@ export default {
             },
           },
           {
-            test: /\.(scss|css)$/,
-            use: ['style-loader', 'css-loader', 'sass-loader'],
-          },
+            test: /\.css$/,
+            use: [
+                miniCssExtraPlugin.loader,
+                "css-loader",
+                "postcss-loader",
+            ],
+        },
           {
             test: /\.svg$/,
             use: [
@@ -43,5 +51,9 @@ export default {
           },
         ],
       },
-      plugins: [new MiniCssExtractPlugin()],
+      plugins: [
+        new miniCssExtraPlugin(),
+         new HtmlWebpackPlugin({template: './src/index.html'})
+      ],
+      
 }

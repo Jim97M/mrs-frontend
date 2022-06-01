@@ -1,10 +1,13 @@
 import React from "react";
+import AddEmployee from "./components/AddEmployee";
+import Navbar from "./components/Navbar";
 
 const App = () => {
     return(
-        <div>
-           <p>Started</p> 
-        </div>
+       <> 
+        <Navbar />
+        <AddEmployee />
+        </>
     );
 };
 
