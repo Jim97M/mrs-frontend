@@ -26,6 +26,16 @@ const EmployeeList = () => {
    }, []);
        
 
+   const deleteManager = (e, id) => {
+    e.preventDefault();
+    ManageService.deleteManager(id).then((res) => {
+      if (managers) {
+        setEmployees((prevElement) => {
+          return prevElement.filter((manager) => manager.id !== id);
+        });
+      }
+    });
+  };
 
   return (
     <div className='container mx-auto my-8'>
@@ -44,12 +54,12 @@ const EmployeeList = () => {
              </thead>
              {!loading && (
             <tbody className="bg-white">
-               {Array.isArray(managers) ? managers.map((manager) => (
+                {managers.map((manager) => (
                 <Employee
                   manager={manager}
-                  deleteManager={deleteManager}
+                  deleteManage={deleteManager}
                   key={manager.id}></Employee>
-              )) : null}
+              )) }
             </tbody>
           )}
          </table>

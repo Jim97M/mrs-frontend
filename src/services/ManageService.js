@@ -18,8 +18,8 @@ class ManageService{
     return axios.get(MANAGE_BASE_URL + "/" + id);
   }
 
-  updateManage(manager, id) {
-    return axios.put(MANAGE_BASE_URL + "/" + id, manager);
+  updateManage(manage, id) {
+    return axios.put(MANAGE_BASE_URL + "/" + id, manage);
   }
 }
 
