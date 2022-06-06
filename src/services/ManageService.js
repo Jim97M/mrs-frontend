@@ -10,6 +10,17 @@ class ManageService{
    getAllManagers(){
        return axios.get(MANAGE_BASE_URL)
    }
+   deleteManager(id) {
+    return axios.delete(MANAGE_BASE_URL + "/" + id);
+  }
+
+  getManagerById(id) {
+    return axios.get(MANAGE_BASE_URL + "/" + id);
+  }
+
+  updateManage(manager, id) {
+    return axios.put(MANAGE_BASE_URL + "/" + id, manager);
+  }
 }
 
 export default new ManageService();

@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react'
 import { useNavigate } from 'react-router-dom'
 import ManageService from '../services/ManageService';
+import Employee from './Employee';
 
 const EmployeeList = () => {
   
    const navigate = useNavigate();
 
    const [loading, setLoading] = useState(true);
-   const [manage, setManage] = useState(null);
+   const [managers, setManagers] = useState(null);
 
 
    useEffect(() => {
@@ -15,7 +16,7 @@ const EmployeeList = () => {
          setLoading(true)
          try {
             const response = await ManageService.getAllManagers();
-            setManage(response.data);
+            setManagers(response.data);
          } catch (error) {
              console.log(error);
          }
@@ -41,28 +42,16 @@ const EmployeeList = () => {
                      <th className='text-right font-medium text-gray-500 uppercase tracking-wider py-3 px-6'>Actions</th>
                  </tr>
              </thead>
-             {!loading && ( 
-             <tbody className='bg-white'>
-                 {Array.isArray(manage) ? manage.map((manag) => (
-                     
-                 <tr>
-                     <td className='text-left px-6 py-4 whitespace-nowrap'>
-                         <div className='text-sm text-gray-500'>{manag.firstName}</div>
-                     </td>
-                     <td className='text-left px-6 py-4 whitespace-nowrap'>
-                         <div className='text-sm text-gray-500'>{manag.lastName}</div>
-                     </td>
-                     <td className='text-left px-6 py-4 whitespace-nowrap'>
-                         <div className='text-sm text-gray-500'>{manag.emailId}</div>
-                     </td>
-                     <td className='text-right px-6 py-4 whitespace-nowrap font-medium text-sm'>
-                         <a className='text-indigo-600 hover:text-indigo-800 px-4' href='#'>Edit</a>
-                         <a className='text-indigo-600 hover:text-indigo-800' href='#'>Delete</a>
-                     </td>
-                 </tr>
-                 )): null}
-             </tbody>
-             )}
+             {!loading && (
+            <tbody className="bg-white">
+              {managers.map((manager) => (
+                <Employee
+                  manager={manager}
+                  deleteManager={deleteManager}
+                  key={manager.id}></Employee>
+              ))}
+            </tbody>
+          )}
          </table>
          
      </div>
