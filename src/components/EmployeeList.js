@@ -44,12 +44,12 @@ const EmployeeList = () => {
              </thead>
              {!loading && (
             <tbody className="bg-white">
-              {managers.map((manager) => (
+               {Array.isArray(managers) ? managers.map((manager) => (
                 <Employee
                   manager={manager}
                   deleteManager={deleteManager}
                   key={manager.id}></Employee>
-              ))}
+              )) : null}
             </tbody>
           )}
          </table>
