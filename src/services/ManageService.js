@@ -1,5 +1,5 @@
 import axios from "axios";
-const MANAGE_BASE_URL = "http://localhost:8081/api/v1/manager";
+const MANAGE_BASE_URL = "http://localhost:8081/api/v1/club";
 class ManageService{
    saveManage(manage){
        return axios.post(
