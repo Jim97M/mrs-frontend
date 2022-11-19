@@ -30,7 +30,7 @@ const EmployeeList = () => {
     e.preventDefault();
     ManageService.deleteManager(id).then((res) => {
       if (managers) {
-        setEmployees((prevElement) => {
+        setManagers((prevElement) => {
           return prevElement.filter((manager) => manager.id !== id);
         });
       }

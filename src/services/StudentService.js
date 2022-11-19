@@ -1,5 +1,5 @@
 import axios from "axios";
-const STUDENT_BASE_URL = "http://localhost:8081/api/v1/club";
+const STUDENT_BASE_URL = "http://localhost:8081/api/v1/student";
 class StudentService{
    saveStudent(student){
        return axios.post(

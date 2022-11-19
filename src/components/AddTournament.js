@@ -4,9 +4,8 @@ import TournamentService from '../services/TournamentService';
 const AddTournament = () => {
   const [tournament, setTournament] = useState({
     id: "",
-    firstName: "",
-    lastName: "",
-    emailId: ""
+    name: "",
+    description: ""
   });
 
   const handleChange = (e) => {
@@ -32,37 +31,27 @@ const AddTournament = () => {
           <h1>Add Tournament</h1>
        </div>
        <div className='items-center justify-center h-14 my-4'>
-         <label className='block text-gray-600 text-sm font-normal'>First Name</label>
+         <label className='block text-gray-600 text-sm font-normal'>Tournament Name</label>
          <input
            type="text" 
            className="h-10 w-96 border mt-2 px-2 py-2"
-           name='firstName'
-           value={manage.firstName}
+           name='Name'
+           value={tournament.name}
            onChange = {(e) => handleChange(e)}
            />
        </div>
        <div className='items-center justify-center h-14 my-4'>
-         <label className='block text-gray-600 text-sm font-normal'>Last Name</label>
+         <label className='block text-gray-600 text-sm font-normal'>Tournament Description</label>
          <input 
            type="text"
            className="h-10 w-96 border mt-2 px-2 py-2"
-           name='lastName'
-           value={manage.lastName}
-           onChange = {(e) => handleChange(e)}
-           />
-       </div>
-       <div className='items-center justify-center h-14 my-4'>
-         <label className='block text-gray-600 text-sm font-normal'>Email</label>
-         <input 
-           type="email"
-           className="h-10 w-96 border mt-2 px-2 py-2"
-           name='emailId'
-           value={manage.emailId}
+           name='Description'
+           value={tournament.description}
            onChange = {(e) => handleChange(e)}
            />
        </div>
        <div className='items-center justify-center h-14 my-4 w-full space-x-10 pt-4'>
-         <button onClick={saveManage} className='rounded text-white font-semibold bg-green-500 hover:bg-green-700 px-6 py-2'>Save</button>
+         <button onClick={saveTournament} className='rounded text-white font-semibold bg-green-500 hover:bg-green-700 px-6 py-2'>Save</button>
       
          <button className='rounded text-white font-semibold bg-red-500 hover:bg-red-700 px-6 py-2'>Clear</button>
        </div>
@@ -72,4 +61,4 @@ const AddTournament = () => {
   )
 }
 
-export default AddEmployee
+export default AddTournament;
