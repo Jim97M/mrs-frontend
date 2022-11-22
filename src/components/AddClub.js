@@ -42,7 +42,7 @@ const AddClub = () => {
            />
        </div>
        <div className='items-center justify-center h-14 my-4'>
-         <label className='block text-gray-600 text-sm font-normal'>Category Name</label>
+         <label className='block text-gray-600 text-sm font-normal'>Club Category</label>
          <input 
            type="text"
            className="h-10 w-96 border mt-2 px-2 py-2"
@@ -52,7 +52,7 @@ const AddClub = () => {
            />
        </div>
        <div className='items-center justify-center h-14 my-4'>
-         <label className='block text-gray-600 text-sm font-normal'>Description</label>
+         <label className='block text-gray-600 text-sm font-normal'>Club Description</label>
          <input 
            type="email"
            className="h-10 w-96 border mt-2 px-2 py-2"
