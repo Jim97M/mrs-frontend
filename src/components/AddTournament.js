@@ -3,7 +3,6 @@ import TournamentService from '../services/TournamentService';
 
 const AddTournament = () => {
   const [tournament, setTournament] = useState({
-    id: "",
     name: "",
     description: ""
   });

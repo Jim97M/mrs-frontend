@@ -54,8 +54,7 @@ const TournamentList = () => {
              <thead className='bg-gray-50'>
                  <tr>
                      <th className='text-left font-medium text-gray-500 uppercase tracking-wider py-3 px-6'>Tournament Name</th>
-                     <th className='text-left font-medium text-gray-500 uppercase tracking-wider py-3 px-6'>Tournament Category</th>
-                     <th className='text-left font-medium text-gray-500 uppercase tracking-wider py-3 px-6'>Tournament Type</th>
+                     <th className='text-left font-medium text-gray-500 uppercase tracking-wider py-3 px-6'>Tournament Description</th>
                      <th className='text-right font-medium text-gray-500 uppercase tracking-wider py-3 px-6'>Actions</th>
                  </tr>
              </thead>
