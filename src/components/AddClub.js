@@ -34,29 +34,39 @@ const AddClub = () => {
        <div className='items-center justify-center h-14 my-4'>
          <label className='block text-gray-600 text-sm font-normal'>Club Name</label>
          <input
-           type="text" 
+           type="number" 
            className="h-10 w-96 border mt-2 px-2 py-2"
-           name='firstName'
-           value={club.name}
+           name='id'
+           value={club.id}
            onChange = {(e) => handleChange(e)}
            />
        </div>
        <div className='items-center justify-center h-14 my-4'>
-         <label className='block text-gray-600 text-sm font-normal'>Club Category</label>
+         <label className='block text-gray-600 text-sm font-normal'>Club Name</label>
          <input 
            type="text"
            className="h-10 w-96 border mt-2 px-2 py-2"
-           name='lastName'
-           value={club.category}
+           name='name'
+           value={club.name}
            onChange = {(e) => handleChange(e)}
            />
        </div>
        <div className='items-center justify-center h-14 my-4'>
          <label className='block text-gray-600 text-sm font-normal'>Club Description</label>
          <input 
-           type="email"
+           type="text"
            className="h-10 w-96 border mt-2 px-2 py-2"
-           name='emailId'
+           name='category'
+           value={club.category}
+           onChange = {(e) => handleChange(e)}
+           />
+       </div>
+       <div className='items-center justify-center h-14 my-4'>
+         <label className='block text-gray-600 text-sm font-normal'>Club Type</label>
+         <input 
+           type="text"
+           className="h-10 w-96 border mt-2 px-2 py-2"
+           name='type'
            value={club.type}
            onChange = {(e) => handleChange(e)}
            />

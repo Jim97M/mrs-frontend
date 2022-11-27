@@ -28,14 +28,24 @@ const AddStudent = () => {
     <div className='flex max-w-2xl mx-auto shadow border-b'>
       <div className='px-8 py-8'>
         <div className='font-thin text-2xl tracking-wider'>
-          <h1>Add Manager</h1>
+          <h1>Add Student</h1>
+       </div>
+       <div className='items-center justify-center h-14 my-4'>
+         <label className='block text-gray-600 text-sm font-normal'>Student Number</label>
+         <input
+           type="number" 
+           className="h-10 w-96 border mt-2 px-2 py-2"
+           name='id'
+           value={student.id}
+           onChange = {(e) => handleChange(e)}
+           />
        </div>
        <div className='items-center justify-center h-14 my-4'>
          <label className='block text-gray-600 text-sm font-normal'>Student Name</label>
          <input
            type="text" 
            className="h-10 w-96 border mt-2 px-2 py-2"
-           name='Student Name'
+           name='studentName'
            value={student.studentName}
            onChange = {(e) => handleChange(e)}
            />
@@ -45,7 +55,7 @@ const AddStudent = () => {
          <input 
            type="text"
            className="h-10 w-96 border mt-2 px-2 py-2"
-           name='Admission Number'
+           name='admNo'
            value={student.admNo}
            onChange = {(e) => handleChange(e)}
            />
@@ -55,7 +65,6 @@ const AddStudent = () => {
       
          <button className='rounded text-white font-semibold bg-red-500 hover:bg-red-700 px-6 py-2'>Clear</button>
        </div>
-       
      </div>
     </div>
   )

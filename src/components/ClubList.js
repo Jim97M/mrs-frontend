@@ -26,10 +26,10 @@ const ClubList = () => {
        
    const deleteClubs = (e, id) => {
     e.preventDefault();
-    ManageService.deleteManager(id).then((res) => {
+    ClubService.deleteClub(id).then((res) => {
       if (managers) {
-        setManagers((prevElement) => {
-          return prevElement.filter((manager) => manager.id !== id);
+        setClubs((prevElement) => {
+          return prevElement.filter((club) => club.id !== id);
         });
       }
     });
@@ -44,19 +44,20 @@ const ClubList = () => {
          <table className='min-w-full'>
              <thead className='bg-gray-50'>
                  <tr>
-                     <th className='text-left font-medium text-gray-500 uppercase tracking-wider py-3 px-6'>First Name</th>
-                     <th className='text-left font-medium text-gray-500 uppercase tracking-wider py-3 px-6'>Last Name</th>
-                     <th className='text-left font-medium text-gray-500 uppercase tracking-wider py-3 px-6'>Email ID</th>
+                     <th className='text-left font-medium text-gray-500 uppercase tracking-wider py-3 px-6'>Club ID</th>
+                     <th className='text-left font-medium text-gray-500 uppercase tracking-wider py-3 px-6'>Club Name</th>
+                     <th className='text-left font-medium text-gray-500 uppercase tracking-wider py-3 px-6'>Club Description</th>
+                     <th className='text-left font-medium text-gray-500 uppercase tracking-wider py-3 px-6'>Club Type</th>
                      <th className='text-right font-medium text-gray-500 uppercase tracking-wider py-3 px-6'>Actions</th>
                  </tr>
              </thead>
              {!loading && (
             <tbody className="bg-white">
-                {managers.map((manager) => (
-                <Employee
-                  manager={manager}
-                  deleteManage={deleteManager}
-                  key={manager.id}></Employee>
+                {clubs.map((club) => (
+                <Club
+                  club={club}
+                  deleteClub={deleteClubs}
+                  key={club.id}></Club>
               )) }
             </tbody>
           )}

@@ -11,13 +11,13 @@ const Tournament = ({ tournament, deleteTournament }) => {
   return (
     <tr key={tournament.id}>
       <td className="text-left px-6 py-4 whitespace-nowrap">
+        <div className="text-sm text-gray-500">{tournament.id}</div>
+      </td>
+      <td className="text-left px-6 py-4 whitespace-nowrap">
         <div className="text-sm text-gray-500">{tournament.name}</div>
       </td>
       <td className="text-left px-6 py-4 whitespace-nowrap">
-        <div className="text-sm text-gray-500">{tournament.category}</div>
-      </td>
-      <td className="text-left px-6 py-4 whitespace-nowrap">
-        <div className="text-sm text-gray-500">{tournament.type}</div>
+        <div className="text-sm text-gray-500">{tournament.description}</div>
       </td>
       <td className="text-right px-6 py-4 whitespace-nowrap font-medium text-sm">
         <a

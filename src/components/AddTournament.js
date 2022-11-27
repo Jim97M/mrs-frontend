@@ -3,6 +3,7 @@ import TournamentService from '../services/TournamentService';
 
 const AddTournament = () => {
   const [tournament, setTournament] = useState({
+    id: "",
     name: "",
     description: ""
   });
@@ -30,11 +31,21 @@ const AddTournament = () => {
           <h1>Add Tournament</h1>
        </div>
        <div className='items-center justify-center h-14 my-4'>
+         <label className='block text-gray-600 text-sm font-normal'>Tournament ID</label>
+         <input
+           type="text" 
+           className="h-10 w-96 border mt-2 px-2 py-2"
+           name='id'
+           value={tournament.id}
+           onChange = {(e) => handleChange(e)}
+           />
+       </div>
+       <div className='items-center justify-center h-14 my-4'>
          <label className='block text-gray-600 text-sm font-normal'>Tournament Name</label>
          <input
            type="text" 
            className="h-10 w-96 border mt-2 px-2 py-2"
-           name='Name'
+           name='name'
            value={tournament.name}
            onChange = {(e) => handleChange(e)}
            />
@@ -44,7 +55,7 @@ const AddTournament = () => {
          <input 
            type="text"
            className="h-10 w-96 border mt-2 px-2 py-2"
-           name='Description'
+           name='description'
            value={tournament.description}
            onChange = {(e) => handleChange(e)}
            />
