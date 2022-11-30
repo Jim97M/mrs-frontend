@@ -1,5 +1,5 @@
 import axios from "axios";
-const TOURNAMENT_BASE_URL = "http://localhost:8081/api/v1/club";
+const TOURNAMENT_BASE_URL = "http://localhost:8081/api/v1/tournament";
 class TournamentService{
    saveTournament(tournament){
        return axios.post(

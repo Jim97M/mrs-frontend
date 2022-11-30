@@ -31,6 +31,18 @@ const Tournament = ({ tournament, deleteTournament }) => {
           Delete
         </a>
       </td>
+      <td className="text-right px-6 py-4 whitespace-nowrap font-medium text-sm">
+        <a
+          onClick={(e, id) => editTournament(e, tournament.id)}
+          className="text-indigo-600 hover:text-indigo-800 px-4 hover:cursor-pointer">
+          Upvote
+        </a>
+        <a
+          onClick={(e, id) => deleteTournament(e, tournament.id)}
+          className="text-indigo-600 hover:text-indigo-800 hover:cursor-pointer">
+          Downvote
+        </a>
+      </td>
     </tr>
   );
 };

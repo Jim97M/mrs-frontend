@@ -57,11 +57,13 @@ const TournamentList = () => {
                      <th className='text-left font-medium text-gray-500 uppercase tracking-wider py-3 px-6'>Tournament Name</th>
                      <th className='text-left font-medium text-gray-500 uppercase tracking-wider py-3 px-6'>Tournament Description</th>
                      <th className='text-right font-medium text-gray-500 uppercase tracking-wider py-3 px-6'>Actions</th>
+                     <th className='text-right font-medium text-gray-500 uppercase tracking-wider py-3 px-6'>Vote</th>
                  </tr>
              </thead>
              {!loading && (
             <tbody className="bg-white">
                 {tournaments.map((tournament) => (
+                  console.log(tournament),
                 <Tournament
                   tournament={tournament}
                   deleteTournament={deleteTournament}
